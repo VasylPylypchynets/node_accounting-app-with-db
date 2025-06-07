@@ -3,7 +3,7 @@ const {
   getAllUsersController,
   getUserByIdController,
   createUserController,
-  delateUserController,
+  deleteUserController,
   updateUserController,
 } = require('../controllers/users.controller');
 const { Router } = express;
@@ -16,7 +16,7 @@ usersRouter.get('/:userId', getUserByIdController);
 
 usersRouter.post('/', createUserController);
 
-usersRouter.delete('/:userId', delateUserController);
+usersRouter.delete('/:userId', deleteUserController);
 
 usersRouter.patch('/:userId', updateUserController);
 

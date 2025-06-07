@@ -2,7 +2,7 @@
 const {
   getUser,
   createUser,
-  delateUser,
+  deleteUser,
   updateUser,
   getAllUsers,
 } = require('../services/users.service');
@@ -62,7 +62,7 @@ const createUserController = async (req, res) => {
   }
 };
 
-const delateUserController = async (req, res) => {
+const deleteUserController = async (req, res) => {
   const { userId } = req.params;
 
   if (!userId) {
@@ -72,7 +72,7 @@ const delateUserController = async (req, res) => {
   }
 
   try {
-    const isUserRemoved = await delateUser(userId);
+    const isUserRemoved = await deleteUser(userId);
 
     if (isUserRemoved) {
       res.sendStatus(204);
@@ -132,6 +132,6 @@ module.exports = {
   getAllUsersController,
   getUserByIdController,
   createUserController,
-  delateUserController,
+  deleteUserController,
   updateUserController,
 };

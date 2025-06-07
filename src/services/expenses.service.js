@@ -95,7 +95,7 @@ async function createExpense(body) {
   }
 }
 
-async function delateExpense(expenseId) {
+async function deleteExpense(expenseId) {
   try {
     const deletedRows = await Expense.destroy({
       where: {
@@ -147,7 +147,7 @@ module.exports = {
   getAllExpenses,
   getExpense,
   createExpense,
-  delateExpense,
+  deleteExpense,
   updateExpense,
   normalizeExpense,
 };

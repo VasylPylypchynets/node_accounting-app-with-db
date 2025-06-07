@@ -2,7 +2,7 @@
 const {
   getExpense,
   createExpense,
-  delateExpense,
+  deleteExpense,
   updateExpense,
   getAllExpenses,
   normalizeExpense,
@@ -77,7 +77,7 @@ const createExpenseController = async (req, res) => {
   }
 };
 
-const delateExpenseController = async (req, res) => {
+const deleteExpenseController = async (req, res) => {
   const { expenseId } = req.params;
 
   if (!expenseId) {
@@ -87,7 +87,7 @@ const delateExpenseController = async (req, res) => {
   }
 
   try {
-    const removed = await delateExpense(expenseId);
+    const removed = await deleteExpense(expenseId);
 
     if (!removed) {
       res.sendStatus(404);
@@ -138,6 +138,6 @@ module.exports = {
   getAllExpensesController,
   getExpenseByIdController,
   createExpenseController,
-  delateExpenseController,
+  deleteExpenseController,
   updateExpenseController,
 };

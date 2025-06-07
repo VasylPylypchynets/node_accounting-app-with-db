@@ -34,7 +34,7 @@ async function createUser(name) {
   }
 }
 
-async function delateUser(userId) {
+async function deleteUser(userId) {
   try {
     const deletedRows = await User.destroy({
       where: {
@@ -75,6 +75,6 @@ module.exports = {
   getAllUsers,
   getUser,
   createUser,
-  delateUser,
+  deleteUser,
   updateUser,
 };

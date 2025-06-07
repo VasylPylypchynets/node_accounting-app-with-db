@@ -2,7 +2,7 @@ const express = require('express');
 const {
   getAllExpensesController,
   getExpenseByIdController,
-  delateExpenseController,
+  deleteExpenseController,
   createExpenseController,
   updateExpenseController,
 } = require('../controllers/expenses.controller');
@@ -17,7 +17,7 @@ expensesRouter.get('/:expenseId', getExpenseByIdController);
 
 expensesRouter.post('/', createExpenseController);
 
-expensesRouter.delete('/:expenseId', delateExpenseController);
+expensesRouter.delete('/:expenseId', deleteExpenseController);
 
 expensesRouter.patch('/:expenseId', updateExpenseController);
 
