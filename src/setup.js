@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+const { Category } = require('./models/Category.model');
 const { Expense } = require('./models/Expense.model');
 const { User } = require('./models/User.model');
 
@@ -6,6 +7,7 @@ async function setupDatabase() {
   try {
     await User.sync({ force: true });
     await Expense.sync({ force: true });
+    await Category.sync({ force: true });
 
     User.hasMany(Expense, { foreignKey: 'userId' });
     Expense.belongsTo(User, { foreignKey: 'userId' });
